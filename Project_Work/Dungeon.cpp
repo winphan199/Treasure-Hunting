@@ -29,14 +29,36 @@ Dungeon::Dungeon() {
 }
 
 void Dungeon::setLevel(int level) {
+    
+    Wall w;
+
+    //create a map for each level
     switch (level) {
         case 1:
         {
-            
+            push(w, 0, 0);
+            push(w, 1, 0);
+            push(w, 8, 2);
+            push(w, 9, 2);
+            push(w, 10, 2);
+            push(w, 2, 4);
+            push(w, 3, 4);
             break;
         }
         case 2:
         {
+            push(w, 5, 0);
+            push(w, 6, 0);
+            push(w, 8, 1);
+            push(w, 9, 1);
+            push(w, 10, 1);
+            push(w, 2, 2);
+            push(w, 2, 3);
+            push(w, 2, 4);
+            push(w, 3, 4);
+            push(w, 4, 4);
+            push(w, 5, 4);
+            push(w, 6, 4);
             break;
         }
         default:
@@ -96,8 +118,32 @@ void Dungeon::push(GameObject &obj, int x, int y) {
                 temp++;
                 vir_x++;
             }
-            this->_map[temp] = obj.getSymbol(); //this is the position of the gameobject.
-            return;
+            //After finding the exact position we want to place the object. We have to make sure we won't replace some other objects.
+            //=> check if the symbol is '.'
+            if (this->_map[temp] == CONSTANT::_SPOT)
+            {
+                this->_map[temp] = obj.getSymbol(); //this is the position of the gameobject.
+                return;
+            }
+            else {
+                //if we can't push in that position, then find another position
+                
+                int count_1 = 0;
+                for (int j = temp; j < _width * _height - _width; j = (++j) % (_width * _height - _width)) // this will make sure it will always find a place to push.
+                {
+                    if (count_1 >= _width * _height - _width)
+                    {
+                        throw "Error: The dungeon is full.";
+                    }
+                    
+                    if (this->_map[j] == CONSTANT::_SPOT)
+                    {
+                        this->_map[j] = obj.getSymbol();
+                        return;
+                    }
+                    count_1++;
+                }
+            } 
         }
         count++;
     }

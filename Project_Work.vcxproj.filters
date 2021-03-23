@@ -38,5 +38,11 @@
     <ClInclude Include="Project_Work\TreasureHuntingLib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Project_Work\GamePlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Project_Work\Wall.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

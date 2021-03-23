@@ -1,9 +1,9 @@
 #pragma once
 #include "TreasureHuntingLib.h"
-
+#include "Constant.hpp"
 class GameObject {
 private:
-    char _symbol; // holds symbols of the GameObject
+    char _symbol; // holds symbol of the GameObject
 public:
     //constructors
     GameObject(char symbol);

@@ -1,7 +1,7 @@
 #pragma once
 #include "TreasureHuntingLib.h"
 #include "Constant.hpp"
-#include "GameObject.hpp"
+#include "Wall.h"
 class Dungeon {
 private:
     const int _width = CONSTANT::_WIDTH; //this is the width of the dungeon

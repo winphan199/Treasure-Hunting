@@ -147,7 +147,9 @@
     <ClInclude Include="Project_Work\Constant.hpp" />
     <ClInclude Include="Project_Work\Dungeon.hpp" />
     <ClInclude Include="Project_Work\GameObject.hpp" />
+    <ClInclude Include="Project_Work\GamePlay.h" />
     <ClInclude Include="Project_Work\TreasureHuntingLib.h" />
+    <ClInclude Include="Project_Work\Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
