@@ -5,5 +5,5 @@ class Wall : public GameObject
 {
 public:
 	//constructor
-	Wall() : GameObject(CONSTANT::_WALL) {}
+	Wall() : GameObject(CONSTANT::getWall()) {}
 };

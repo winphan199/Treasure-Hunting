@@ -1,13 +1,9 @@
 #include "Dungeon.hpp"
 #include "GameObject.hpp"
+#include "GamePlay.h"
+
+vector<string> Logger::_records;
 int main() {
-    Dungeon d;
-   // d.printDungeon();
-    GameObject b('$');
-    //d.push(b, 10, 5);
-    //d.push(b, 10, 5);
-    //d.push(b, 10, 5);
-    d.setLevel(2);
-    d.printDungeon();
+    GamePlay::gameLoop();
     return 0;
 }

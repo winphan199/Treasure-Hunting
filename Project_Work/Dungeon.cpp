@@ -12,16 +12,16 @@ Dungeon::Dungeon() {
         {
             if (count == 0 || count == _width - 1)
             {
-                _map[i] = CONSTANT::_WALL;
+                _map[i] = CONSTANT::getWall();
             }
             else
             {
-                _map[i] = CONSTANT::_SPOT;
+                _map[i] = CONSTANT::getSpot();
             }
         }
         else
         {
-            _map[i] = CONSTANT::_WALL; //printXXXXX on upper and lower
+            _map[i] = CONSTANT::getWall(); //printXXXXX on upper and lower
         }
 
         count++;
@@ -31,7 +31,30 @@ Dungeon::Dungeon() {
 void Dungeon::setLevel(int level) {
     
     Wall w;
+    int count = 0;
+    //first reset the dungeon to its default.
+    for (int i = 0; i < _width * _height; i++) {
+        if (count == _width) { //if the max width reached -> reset count
+            count = 0;
+        }
+        if (i >= _width && i < _width * _height - _width) //print X....X
+        {
+            if (count == 0 || count == _width - 1)
+            {
+                _map[i] = CONSTANT::getWall();
+            }
+            else
+            {
+                _map[i] = CONSTANT::getSpot();
+            }
+        }
+        else
+        {
+            _map[i] = CONSTANT::getWall(); //printXXXXX on upper and lower
+        }
 
+        count++;
+    }
     //create a map for each level
     switch (level) {
         case 1:
@@ -120,7 +143,7 @@ void Dungeon::push(GameObject &obj, int x, int y) {
             }
             //After finding the exact position we want to place the object. We have to make sure we won't replace some other objects.
             //=> check if the symbol is '.'
-            if (this->_map[temp] == CONSTANT::_SPOT)
+            if (this->_map[temp] == CONSTANT::getSpot())
             {
                 this->_map[temp] = obj.getSymbol(); //this is the position of the gameobject.
                 return;
@@ -136,7 +159,7 @@ void Dungeon::push(GameObject &obj, int x, int y) {
                         throw "Error: The dungeon is full.";
                     }
                     
-                    if (this->_map[j] == CONSTANT::_SPOT)
+                    if (this->_map[j] == CONSTANT::getSpot())
                     {
                         this->_map[j] = obj.getSymbol();
                         return;

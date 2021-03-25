@@ -1,11 +1,10 @@
 #pragma once
 #include "TreasureHuntingLib.h"
-#include "Constant.hpp"
 #include "Wall.h"
 class Dungeon {
 private:
-    const int _width = CONSTANT::_WIDTH; //this is the width of the dungeon
-    const int _height = CONSTANT::_HEIGHT; //this is the height of the dungeon
+    const int _width = CONSTANT::getDungeonWidth(); //this is the width of the dungeon
+    const int _height = CONSTANT::getDungeonHeight(); //this is the height of the dungeon
     char *_map; //this is the dungeon
 public:
     //constructors
