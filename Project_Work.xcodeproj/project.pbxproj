@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		23318B02260B22650025F293 /* Logger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23318B00260B22650025F293 /* Logger.cpp */; };
 		23318B05260B28E80025F293 /* GamePlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23318B04260B28E80025F293 /* GamePlay.cpp */; };
+		23499C86260DCCD900F6F3F6 /* Position.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23499C84260DCCD900F6F3F6 /* Position.cpp */; };
 		23E38EB02608748000A55A97 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E38EAF2608748000A55A97 /* main.cpp */; };
 		23E38EB9260875F800A55A97 /* Dungeon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E38EB7260875F800A55A97 /* Dungeon.cpp */; };
 		23E38EC4260884EB00A55A97 /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23E38EC2260884EB00A55A97 /* GameObject.cpp */; };
@@ -32,6 +33,9 @@
 		23318B00260B22650025F293 /* Logger.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Logger.cpp; sourceTree = "<group>"; };
 		23318B01260B22650025F293 /* Logger.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Logger.hpp; sourceTree = "<group>"; };
 		23318B04260B28E80025F293 /* GamePlay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GamePlay.cpp; sourceTree = "<group>"; };
+		23499C7F260DBDC600F6F3F6 /* CurrentTime.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CurrentTime.hpp; sourceTree = "<group>"; };
+		23499C84260DCCD900F6F3F6 /* Position.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Position.cpp; sourceTree = "<group>"; };
+		23499C85260DCCD900F6F3F6 /* Position.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Position.hpp; sourceTree = "<group>"; };
 		23E38EAC2608748000A55A97 /* Project_Work */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project_Work; sourceTree = BUILT_PRODUCTS_DIR; };
 		23E38EAF2608748000A55A97 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		23E38EB7260875F800A55A97 /* Dungeon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dungeon.cpp; sourceTree = "<group>"; };
@@ -80,10 +84,13 @@
 				23E38EB8260875F800A55A97 /* Dungeon.hpp */,
 				23E38EC2260884EB00A55A97 /* GameObject.cpp */,
 				23E38EC3260884EB00A55A97 /* GameObject.hpp */,
+				23499C7F260DBDC600F6F3F6 /* CurrentTime.hpp */,
 				23318B00260B22650025F293 /* Logger.cpp */,
 				23318B01260B22650025F293 /* Logger.hpp */,
 				23318B04260B28E80025F293 /* GamePlay.cpp */,
 				23318AFE260B1FCB0025F293 /* GamePlay.h */,
+				23499C84260DCCD900F6F3F6 /* Position.cpp */,
+				23499C85260DCCD900F6F3F6 /* Position.hpp */,
 			);
 			path = Project_Work;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 			files = (
 				23E38EB9260875F800A55A97 /* Dungeon.cpp in Sources */,
 				23318B05260B28E80025F293 /* GamePlay.cpp in Sources */,
+				23499C86260DCCD900F6F3F6 /* Position.cpp in Sources */,
 				23E38EB02608748000A55A97 /* main.cpp in Sources */,
 				23E38EC4260884EB00A55A97 /* GameObject.cpp in Sources */,
 				23318B02260B22650025F293 /* Logger.cpp in Sources */,

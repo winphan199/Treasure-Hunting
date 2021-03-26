@@ -7,8 +7,8 @@ void GamePlay::gameLoop() {
     Dungeon dungeon;
     
     //Greetings
-    Logger::Log("Welcome to the Treasure Hunt!");
-    Logger::Log("Entered into the magical dungeon, good Luck!");
+    Log("Welcome to the Treasure Hunt!");
+    Log("Entered into the magical dungeon, good Luck!");
     
     //create a player
     
@@ -23,7 +23,7 @@ void GamePlay::gameLoop() {
     while (level < CONSTANT::getMaxLevel()) {
         //loop until the maximum level reached.
         //log status
-        Logger::Log(status);
+        Log(status);
         //print dungeon
         dungeon.setLevel(level);
         dungeon.printDungeon();
@@ -34,19 +34,19 @@ void GamePlay::gameLoop() {
         
         //log the detail of what player chooses
         if (input[0] == 'w' || input[0] == 'W') {
-            Logger::Log("Moving up.");
+            Log("Moving up.");
             moves++;
         }
         else if (input[0] == 'a' || input[0] == 'A') {
-            Logger::Log("Moving left.");
+            Log("Moving left.");
             moves++;
         }
         else if (input[0] == 's' || input[0] == 'S') {
-            Logger::Log("Moving down.");
+            Log("Moving down.");
             moves++;
         }
         else if (input[0] == 'd' || input[0] == 'D') {
-            Logger::Log("Moving right.");
+            Log("Moving right.");
             moves++;
         }
         else if (input[0] == 'q' || input[0] == 'Q') {
@@ -56,12 +56,13 @@ void GamePlay::gameLoop() {
         }
         else {
             //unknown character
+            Log("Unknown action.");
         }
     }
     //log the log file
     string sum_up = "Congratulations! You have successfully escaped from the " + to_string(level) + "-level\ndungeon after " + to_string(moves) + " moves, with " + to_string(gems) + " gems and total " + to_string(points) + " points.";
-    Logger::Log(sum_up);
-    Logger::Log("You feel relaxed, breathe the fresh air and hold tightly to your treasures!");
-    Logger::Log("Brief adventure history:");
-    Logger::getRecords();
+    Log(sum_up);
+    Log("You feel relaxed, breathe the fresh air and hold tightly to your treasures!");
+    Log("Brief adventure history:");
+    getRecords();
 }

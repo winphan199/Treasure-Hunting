@@ -13,10 +13,11 @@ void Logger::Log(string info, bool echo) {
 
 void Logger::getRecords() {
     for (int i = 0; i < _records.size(); i++) {
-        cout << _records.at(i);
+        cout << getCurrentDateTime() << ": " << _records.at(i) << endl;
     }
 }
 
 Logger::~Logger() {
     _records.clear();
 }
+

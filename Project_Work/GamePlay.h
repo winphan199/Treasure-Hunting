@@ -2,7 +2,9 @@
 #include "TreasureHuntingLib.h"
 #include "Logger.hpp"
 #include "Dungeon.hpp"
-class GamePlay {
+
+class GamePlay: protected Logger
+{
 private:
 public:
 	//constructors
