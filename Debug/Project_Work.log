@@ -1,5 +1,2 @@
-﻿  Dungeon.cpp
-E:\PL2 Project\Project_Work\Dungeon.cpp(73,26): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  Generating Code...
+﻿  GamePlay.cpp
   Project_Work.vcxproj -> E:\PL2 Project\Debug\Project_Work.exe

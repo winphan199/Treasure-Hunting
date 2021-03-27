@@ -141,13 +141,19 @@
   <ItemGroup>
     <ClCompile Include="Project_Work\Dungeon.cpp" />
     <ClCompile Include="Project_Work\GameObject.cpp" />
+    <ClCompile Include="Project_Work\GamePlay.cpp" />
+    <ClCompile Include="Project_Work\Logger.cpp" />
     <ClCompile Include="Project_Work\main.cpp" />
+    <ClCompile Include="Project_Work\Position.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Project_Work\Constant.hpp" />
+    <ClInclude Include="Project_Work\CurrentTime.hpp" />
     <ClInclude Include="Project_Work\Dungeon.hpp" />
     <ClInclude Include="Project_Work\GameObject.hpp" />
     <ClInclude Include="Project_Work\GamePlay.h" />
+    <ClInclude Include="Project_Work\Logger.hpp" />
+    <ClInclude Include="Project_Work\Position.hpp" />
     <ClInclude Include="Project_Work\TreasureHuntingLib.h" />
     <ClInclude Include="Project_Work\Wall.h" />
   </ItemGroup>

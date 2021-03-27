@@ -64,5 +64,6 @@ void GamePlay::gameLoop() {
     Log(sum_up);
     Log("You feel relaxed, breathe the fresh air and hold tightly to your treasures!");
     Log("Brief adventure history:");
+
     getRecords();
 }
