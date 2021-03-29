@@ -6,7 +6,8 @@ private:
     int _x; // holds x coordinate
     int _y; // holds y coordinate
 public:
-    //constructor
+    //constructors
+    Position();
     Position(int x, int y);
     
     //getters, setters
@@ -14,5 +15,7 @@ public:
     int getY() const;
     void setX(int x);
     void setY(int y);
-    void setPosition(int x, int y);
+    
+    //overload operator
+    bool operator == (Position& obj);
 };

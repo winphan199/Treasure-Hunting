@@ -7,13 +7,14 @@ void Logger::Log(string info, bool echo) {
         cout << info << endl;
     }
     else {
+        info = getCurrentDateTime()+ ": " + info;
         _records.push_back(info);
     }
 }
 
 void Logger::getRecords() {
     for (int i = 0; i < _records.size(); i++) {
-        cout << getCurrentDateTime() << ": " << _records.at(i) << endl;
+        cout << _records.at(i) << endl;
     }
 }
 
