@@ -1,7 +1,2 @@
-﻿  GamePlay.cpp
-E:\PL2 Project\Project_Work\GamePlay.cpp(177,27): warning C4018: '<': signed/unsigned mismatch
-E:\PL2 Project\Project_Work\GamePlay.cpp(218,27): warning C4018: '<': signed/unsigned mismatch
-E:\PL2 Project\Project_Work\GamePlay.cpp(261,27): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  Generating Code...
+﻿  main.cpp
   Project_Work.vcxproj -> E:\PL2 Project\Debug\Project_Work.exe
