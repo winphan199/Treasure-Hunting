@@ -15,7 +15,7 @@ void GamePlay::gameLoop() {
         Player player(0, 0);
         Position player_pos; //temp position of player
         //setLevel, player energy, points, moves
-        int level = 0;
+        int level = 1;
         int points = 0;
         int moves = 0;
         int gems = 0;
@@ -95,13 +95,16 @@ void GamePlay::gameLoop() {
                 else {
                     //unknown character
                     Log("Unknown action.");
+                    direction = "";
                 }
                 
                 //handle input action
-                bool isContinued = handleInteraction(dungeon, player, g_arr, m_arr, a_arr, direction, points, level, gems);
+                bool iskilled = false;
+                bool isContinued = handleInteraction(dungeon, player, g_arr, m_arr, a_arr, direction, points, level, gems, iskilled);
                 //what if players lost energy then dies
-                if (player.getEnergy() <= 0) {
-                    level--;
+                if (player.getEnergy() <= 0 && !iskilled) {
+                    Log("Died on the way.");
+                    Log("Died on the way.", false);
                     break;
                 }
                 //if player can't continue in this level then get out
@@ -113,7 +116,13 @@ void GamePlay::gameLoop() {
             }
             //quit game when press quit or player is dead.
             if (input[0] == 'q' || input[0] == 'Q' || player.getEnergy() <= 0) {
+                level--;
                 break;
+            }
+            if (level == CONSTANT::getMaxLevel())
+            {
+                Log("GG, EZ!");
+                Log("Passed all level, became new king.", false);
             }
             level++;
         }
@@ -135,10 +144,15 @@ void GamePlay::gameLoop() {
 }
 
 //return true if player keeps continue in a specific level, false if player is dead or passes to higher level
-bool GamePlay::handleInteraction(Dungeon &dungeon, Player &player, vector<Gem>& g_arr, vector<Monster>& m_arr, vector<Apple>& a_arr, string direction, int &points, int level, int &gems) {
+bool GamePlay::handleInteraction(Dungeon &dungeon, Player &player, vector<Gem>& g_arr, vector<Monster>& m_arr, vector<Apple>& a_arr, string direction, int &points, int level, int &gems, bool &iskilled) {
     //get previous position first
     Position pre_pos = player.getPosition();
-
+    
+    //if unknown direction
+    if (direction != "up" && direction != "down" && direction != "left" && direction != "right")
+    {
+        return true;
+    }
     //let it moves
     player.move(direction);
     //recent position
@@ -217,6 +231,7 @@ bool GamePlay::handleInteraction(Dungeon &dungeon, Player &player, vector<Gem>& 
             //delete player in previous position
             dungeon.remove(pre_pos.getX(), pre_pos.getY());
             level--;
+            iskilled = true;
             return false;
         }
         else {

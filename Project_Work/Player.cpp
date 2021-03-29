@@ -38,7 +38,7 @@ void Player::move(string direction) {
         this->_position.setX(vir_x);
     }
     else {
-        throw "Error: Unknow direction.";
+        
     }
 }
 
