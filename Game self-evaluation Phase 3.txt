@@ -1,0 +1,5 @@
+Game self-evaluation:
+- The game is simple, but the development of it is not simple at all.
+- The hardest part of developing the game is logical handling, I have to cover all cases, events that are likely to happen in the game. So making GamePlay object is the hardest part.
+- I want to improve the game more using system("cls"); and system("clear") for the game to work cross-platform, but I couldn't do it since it is a bit complicated.
+- Anyway I hope my design ensures the OOP purpose.

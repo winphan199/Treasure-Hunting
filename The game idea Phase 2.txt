@@ -1,0 +1,26 @@
+The game idea:
+	- There are 10 levels that player needs to complete in order to end game.
+	- The map is different depending on the level.
+	- In every maps, there are gems, apples, monsters with the amount, energy/strength and position generated randomly.
+		+ Gems are the keys, they don't give player any advantages, but player has to collect them in order to pass the level.
+		+ Apples give player random energy in range [0, 100], all depends on player's luck.
+		+ Monsters have strength generated randomly in range [0, 100], sometimes, monster can one hit player to send the player to the other side.
+		+ There is a secret passage that will appear randomly in the dungeon only after players have collected all the gems.
+	- First off, player is given a default energy of 100% that will decrease everytime player moves, you know, when you move you will gradually feel tired.
+	- The energy decreases on move increases when player enters higher level.
+	- The greatest purpose of the game is the make player feel desperate and frustrated, even leads to break the computer.
+Anticipated classes:
+- GameObject - the patern that defines things in common of any gameobject in the game except the dungeon.
+- Player - the gameobject that acts as a player a game and the player is unique and created only once, the player can move so it is the child of movable interface either.
+- Wall - the gameobject that will blocks the player from moving through. Ofcourse, it can't move, but for designing purpose, it is the child of movable interface either so I can setPosition of it.
+- Monster - the gameobject that acts as monster in the game, which try to kill player.
+- Apple - the gameobject that gives player energy like energy drink.
+- Gem - the gameobject that acts as keys which is needed to collect to pass the level.
+- Entrance - the gate to the other side, I mean the next level. LOL
+- Constant - Stores all constants in the game since it is bad practice that the game has magic number, leads to hard to debug later.
+- Position - Stores x, y coordinates used to navigate player in the dungeon.
+- MovableInterface - The parent stuff that allows gameobject to move.
+- Logger - Acts as announcer also the record holder.
+- CurrentTime - This will retrieve the current time to display in the game.
+- Dungeon - Acts as a map where all gameobjects have a place to show themself.
+- GamePlay - Handles all events occured in the game.
